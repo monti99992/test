@@ -8,7 +8,7 @@ include_once "cprint.php";
 $smsapp=new sms();
 $smsapp->setGateway('way2sms');
 $myno='9462899992';
-$p='pass1993';
+$p='';
 $tonum=$_POST['tono'];
 $mess=$_POST['message'];
 
