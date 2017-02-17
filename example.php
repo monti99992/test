@@ -4,11 +4,11 @@ ob_implicit_flush(true);
 include_once "class.curl.php";
 include_once "class.sms.php";
 include_once "cprint.php";
-
+session_start();
 $smsapp=new sms();
 $smsapp->setGateway('way2sms');
-$myno='9462899992';
-$p='';
+$myno=$_SESSION['Mobile'];
+$p=$_SESSION['Password'];
 $tonum=$_POST['tono'];
 $mess=$_POST['message'];
 

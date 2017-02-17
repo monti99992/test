@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION) or empty($_SESSION)){
+	header('Location:signin.php');
+}
+ ?>
 <!---<html>
 <head>
 Sending sms from your webpage</head>
@@ -90,11 +96,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix" style="margin:5px;"> </div>
 							</div>
 							</div>
-							
+
 							<input class="button" type="submit" value="SEND SMS">
-							
+							<a href="logout.php" class="button">Logout</a>
+
 							</form>
-							
+
 						</div>
 
 					</div>
