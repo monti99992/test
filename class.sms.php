@@ -1,5 +1,4 @@
 <?php
-
 include_once "cprint.php";
 
 class sms
@@ -21,7 +20,7 @@ class sms
             case 'way2sms':
             $this->server='way2sms';
             break;
-           
+
             default :
             print "Currently only Way2sms is supported";
             break;
@@ -60,16 +59,14 @@ class sms
 
 
         if (!preg_match('/<h3>Welcome to Way2SMS<.h3>/',$html)) {
-            print("Error Logging In");
-            print($html);
             return(0);
         }
 
-        print("Logged In Successfully");
+        //print("Logged In Successfully");
 
         if (!preg_match("/Location:(.*)[?]id=(.*)\n/",$html,$matches)) {
-            print("Error getting location & token");
-            cprint($html);
+            //print("Error getting location & token");
+            //cprint($html);
             return(0);
         }
 
@@ -81,8 +78,8 @@ class sms
         cprint("Token:$token");
         return(1);
     }
-   
-    
+
+
     private function send_way2sms($number,$msg)
     {
         $domain=$this->data['domain'];
@@ -108,7 +105,7 @@ class sms
         }
         else {
            // echo "<script type=\"text/javascript\">alert('SMS Successfully sended');</script>";
-           
+
             print("sms sended sucessfully");
             print("Logged In Successfully");
             return(1);
